@@ -1,0 +1,100 @@
+1. What is the time, and space complexity of the following code:
+int a = 0, b = 0;
+for (i = 0; i < N; i++) {
+a = a + rand();
+} for (
+j
+=
+0; j
+<
+M; j++) {
+b = b + rand();
+}
+Ans= the time complexity of the above code is O(N+M);
+
+2. What is the time complexity of the following code:
+int a = 0;
+for (i = 0; i < N; i++) {
+for (j = N; j > i; j--) {
+a = a + i + j;
+}
+}
+
+ans= time complexity of the above code is O(n^2)
+
+3 .What is the time complexity of the following code:
+int i, j, k = 0;
+for (i = n / 2; i <= n; i++) {
+for (j = 2; j <= n; j = j * 2) {
+k = k + n / 2;
+}
+}
+
+ans=The outer loop runs from i = n / 2 to i <= n. This loop iterates (n - n/2 + 1) times, which simplifies to roughly n/2 times.
+
+The inner loop runs from j = 2 to j <= n, but the increment is j = j * 2, which means that j doubles in each iteration. The number of times this inner loop will run depends on how many times we can double 2 until it becomes greater than n. This is equivalent to finding the largest power of 2 that is less than or equal to n, which is roughly log2(n).
+
+Inside the inner loop, a constant operation is performed: k = k + n / 2.
+
+Putting it all together, the time complexity of the given code is approximately:
+n/2*logn==> O(nlogn)
+
+4. What is the time complexity of the following code :
+void fun(int n)
+{
+for (int i = 0; i < n / 2; i++)
+for (int j = 1; j + n / 2 <= n; j++)
+for (int k = 1; k <= n; k = k * 2)
+cout << "Prateek Jain";
+}
+
+
+ans=The outermost loop runs from i = 0 to i < n / 2. This loop iterates n / 2 times.
+
+The middle loop runs from j = 1 to j + n / 2 <= n. This loop iterates (n - n/2) times, which simplifies to roughly n/2 times.
+
+The innermost loop runs from k = 1 and keeps doubling k until it's less than or equal to n. The number of times this loop will run depends on how many times we can double 1 until it becomes greater than n. This is equivalent to finding the largest power of 2 that is less than or equal to n, which is roughly log2(n).
+
+Inside the innermost loop, a constant operation is performed: printing "Prateek Jain".
+
+Putting it all together, the time complexity of the given code is approximately:
+(n/2) * (n/2) * log2(n)
+(n^2 / 4) * log2(n)
+O(n^2 log n)
+
+
+5  .T (n) = 3T (n/3) + n/2
+The given recurrence relation is:
+T(n) = 3T(n/3) + n/2
+We can apply the Master Theorem to solve this recurrence relation. The Master Theorem has the following form:
+
+T(n) = a * T(n/b) + f(n)
+where:
+a is the number of subproblems.
+b is the factor by which the problem size is reduced.
+f(n) is the cost of dividing the problem and combining the solutions.
+In your case:
+
+a = 3 (number of subproblems)
+b = 3 (factor by which problem size is reduced)
+f(n) = n/2 (cost of dividing the problem and combining solutions)
+Now, let's compare f(n) with n^log_b(a):
+
+n^log_b(a) = n^log_3(3) = n
+Since f(n) is Θ(n^(log_b(a))), we are in case 2 of the Master Theorem.
+
+Case 2 states that if f(n) is in the same complexity class as n^log_b(a), then the time complexity of the recurrence is Θ(n^log_b(a) * log n), which means:
+
+T(n) = Θ(n * log n)
+Therefore, the solution to the recurrence relation T(n) = 3T(n/3) + n/2 using the Master Theorem is Θ(n * log n).
+
+6. T (n) = 6T (n/3) + n^2log n
+ans= O(n^2logn)
+7. T (n) = 4T (n/2) + n/ log n
+ans=O(n^2)
+8. T (n) = 64T (n/8) − n^2log n
+ans= O(n^8*log^2*n)
+9. T (n) = 7T (n/3) + n^2
+ans= O(n^2)
+10. T (n) = 4T (n/2) + log n
+ans=O(n^2)
