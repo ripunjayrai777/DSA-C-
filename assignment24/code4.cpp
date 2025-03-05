@@ -7,7 +7,7 @@ int main()
     int n;
     cout << "Enter the value N : " << endl;
     cin >> n;
-    cout << pas(n);
+    pas(n);
 }
 int pas(int rows)
 {
